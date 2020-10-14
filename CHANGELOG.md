@@ -1,6 +1,6 @@
 # 0.3.0
 
-Welcome to Shadowlands prepatch and setup workflow
+Welcome to Classic
 
 ---
 
