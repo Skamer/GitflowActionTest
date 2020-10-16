@@ -43,7 +43,7 @@ function OnLoad(self)
   CallbackManager.Register("Blizzard/UpdateTrackerVisibility", Callback(function(replace) BLIZZARD_TRACKER_VISIBLITY_CHANGED(not replace) end))
 
   --
-  _DB:SetDefault{ dbVersion = 1 }
+  _DB:SetDefault{ dbVersion = 2 }
   _DB:SetDefault{ minimap = { hide = false }}
 
   -- Setup the minimap button
