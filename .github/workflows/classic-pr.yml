@@ -1,0 +1,29 @@
+name: Package the pull requests for Classic
+
+on:
+  pull_request:
+    branches:
+      - classic
+      - classic-develop
+      - classic-release/*
+      - classic-hotfix/*
+      - classic-feature/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone project
+        uses: actions/checkout@v2
+      
+      - name: Create the Classic package
+        uses: BigWigsMods/packager@master
+        with:
+          args: -d -z -g classic
+      
+      - name: Upload the package as artifact
+        uses: actions/upload-artifact@v2.2.0
+        with:
+          name: SylingTracker-classic-pr${{ github.event.number }}
+          path: .release/
